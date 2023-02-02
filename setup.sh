@@ -15,3 +15,8 @@ cd $HOME/Canto
 sudo make install
 wget https://raw.githubusercontent.com/Canto-Network/Canto/genesis/Networks/Mainnet/genesis.json -P $HOME/.cantod/config/
 
+chmod 700 state_sync.sh
+./state_sync.sh
+sudo service canto stop
+cantod unsafe-reset-all
+sudo service canto start
