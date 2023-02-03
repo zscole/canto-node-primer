@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -e
 
 # Updates system and installs dependencies
 sudo apt-get -y update && sudo apt-get -y upgrade
