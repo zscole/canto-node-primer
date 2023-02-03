@@ -12,7 +12,7 @@ If you have any more advanced questions, feel free to ask them in the [Canto Cul
  Although I am a core contributor to the project, I do not speak for the community. 
 
 ## What is Canto?
-Before we dive in to the technical details, let's quickly go over the basics of the Canto community. 
+Before we dive into the technical details, let's quickly go over the basics of the Canto community. 
 
 Canto is a permissionless, general-purpose blockchain running the Ethereum Virtual Machine (EVM).
 
