@@ -37,9 +37,9 @@ If you require high perfomance, I would recommend running NVME SSDs, but for the
 The total monthly cost for a VM with this configuration is approximately $127.84, or about $0.18 hourly.
 
 # Network Details
-Network Type: Mainnet
-Chain ID: canto_7700-1
-Current Node Version: v5.0.0
+Network Type: Mainnet  
+Chain ID: canto_7700-1  
+Current Node Version: v5.0.0.  
 
 # Run Bash Script
 Included in this repository is a simple bash script that will install all of the necessary dependencies, set up your node, and configure everything needed to get going. 
