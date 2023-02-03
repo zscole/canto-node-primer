@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -e
 
 SNAP_RPC="https://canto-rpc.polkachu.com:443"
 
