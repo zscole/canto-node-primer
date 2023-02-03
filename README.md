@@ -44,10 +44,14 @@ Current Node Version: v5.0.0.
 # Run Bash Script
 Included in this repository is a simple bash script that will install all of the necessary dependencies, set up your node, and configure everything needed to get going. 
 
-To run the script, simply copy and paste the following command into your terminal: 
+Git clone this repository to your home directory and then navigate to the folder once it's successfully cloned.  
 
-    curl -s https://raw.githubusercontent.com/zscole/canto-node-primer/main/setup.sh | bash
+From the `$HOME/canto-node-primer` folder, run `chmod 700 setup.sh` to make the bash script an executable file. 
 
+The run `./setup.sh` and let the script work its magic.
+
+## TODO
+I still need to finish the script to include instructions for syncing your node with the current state. 
 
 
 
