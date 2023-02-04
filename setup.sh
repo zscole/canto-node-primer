@@ -27,7 +27,7 @@ cantod init $MONIKER --chain-id canto_7700-1
 sed -i 's/seeds = ""/seeds = "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:15556"/' ~/.cantod/config/config.toml
 
 # Sets service file
-sudp cp $HOME/canto-node-primer/canto.service /etc/systemd/system/
+sudo cp $HOME/canto-node-primer/canto.service /etc/systemd/system/
 
 # Syncs node
 cd $HOME/canto-node-primer
