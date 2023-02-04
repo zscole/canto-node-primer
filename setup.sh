@@ -2,7 +2,12 @@
 
 set -e
 
+# Add your moniker here
 MONIKER="YOUR_MONIKER_HERE"
+
+# Checks to see if you've already installed Canto
+[ -e /$HOME/Canto ] && rm -rf /$HOME/Canto
+[ -e /$HOME/.cantod/config/genesis.json ] && rm -rf /$HOME/.cantod/config/genesis.json
 
 # Updates system and installs dependencies
 sudo apt-get -y update && sudo apt-get -y upgrade
