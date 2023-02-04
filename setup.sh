@@ -2,6 +2,8 @@
 
 set -e
 
+MONIKER="YOUR_MONIKER_HERE"
+
 # Updates system and installs dependencies
 sudo apt-get -y update && sudo apt-get -y upgrade
 sudo snap install go --classic && sudo apt-get install git && sudo apt-get install gcc && sudo apt-get -y install make
@@ -16,7 +18,18 @@ sudo mv $HOME/go/bin/cantod /usr/bin/
 
 cd $HOME/Canto
 sudo make install
+
+# Downloads genesis file
 wget https://raw.githubusercontent.com/Canto-Network/Canto/genesis/Networks/Mainnet/genesis.json -P $HOME/.cantod/config/
+
+# Initializes node
+cantod init $MONIKER --chain-id canto_7700-1
+
+# Sets seed node
+sed -i 's/seeds = ""/seeds = "ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:15556"/' ~/.cantod/config/config.toml
+
+# Sets service file
+cp $HOME/canto-node-primer/canto.service /etc/systemd/system/
 
 # Syncs node
 cd $HOME/canto-node-primer

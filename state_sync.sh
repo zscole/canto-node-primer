@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# https://polkachu.com/state_sync/canto
+
 set -e
 
 SNAP_RPC="https://canto-rpc.polkachu.com:443"

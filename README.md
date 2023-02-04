@@ -48,7 +48,11 @@ Git clone this repository to your home directory and then navigate to the folder
 
 From the `$HOME/canto-node-primer` folder, run `chmod 700 setup.sh` to make the bash script an executable file. 
 
-The run `./setup.sh` and let the script work its magic.
+Before running the script, edit the `canto.service` file and replace `INSERT_YOUR_USERNAME_HERE` with your username on line 7. 
+
+Then run `./setup.sh` and let the script work its magic.
+
+
 
 ## TODO
 I still need to finish the script to include instructions for syncing your node with the current state. 

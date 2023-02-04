@@ -1,9 +1,0 @@
-# Prune Type
-pruning = "custom"
-
-# Prune Strategy
-pruning-keep-every = 2000
-
-# State-Sync Snapshot Strategy
-snapshot-interval = 2000
-snapshot-keep-recent = 5
