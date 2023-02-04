@@ -50,6 +50,8 @@ From the `$HOME/canto-node-primer` folder, run `chmod 700 setup.sh` to make the 
 
 Before running the script, edit the `canto.service` file and replace `INSERT_YOUR_USERNAME_HERE` with your username on line 7. If you're on a VM, you can edit the file from your CLI by running `vim canto.service`. If you're not sure what your username is, just run the command `echo $USER`, which will return your username. 
 
+Make sure your go version is >= 1.18
+
 Then run `./setup.sh` and let the script work its magic.
 
 
