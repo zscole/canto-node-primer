@@ -54,9 +54,4 @@ Then run `./setup.sh` and let the script work its magic.
 
 
 
-## TODO
-I still need to finish the script to include instructions for syncing your node with the current state. 
-
-
-
 
