@@ -19,9 +19,6 @@ sudo mv $HOME/go/bin/cantod /usr/bin/
 cd $HOME/Canto
 sudo make install
 
-# Downloads genesis file
-wget https://raw.githubusercontent.com/Canto-Network/Canto/genesis/Networks/Mainnet/genesis.json -P $HOME/.cantod/config/
-
 # Initializes node
 cantod init $MONIKER --chain-id canto_7700-1
 
