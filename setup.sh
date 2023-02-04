@@ -13,13 +13,15 @@ RPC_PORT="26657"
 
 # === Don't change anything below this line ===
 # Checks to see if you've already installed Canto
-# 
+#
 [ -e /$HOME/Canto ] && rm -rf /$HOME/Canto
 [ -e /$HOME/.cantod/config/genesis.json ] && rm -rf /$HOME/.cantod/config/genesis.json
 
 # Updates system and installs dependencies
 sudo apt-get -y update && sudo apt-get -y upgrade
 sudo snap install go --classic && sudo apt-get install -y git gcc make jq
+go install github.com/cosmos/cosmos-sdk/cosmovisor/cmd/cosmovisor@v1.0.0
+
 cd /$HOME/
 git clone https://github.com/Canto-Network/Canto.git
 cd Canto
@@ -28,10 +30,11 @@ git checkout v5.0.0
 # Installs and builds Canto daemon program
 cd $HOME/Canto/cmd/cantod
 go install -tags ledger ./...
+
 sudo mv $HOME/go/bin/cantod /usr/bin/
 
 cd $HOME/Canto
-sudo make install
+make install
 
 # Initializes node
 cantod init $MONIKER --chain-id canto_7700-1
@@ -53,12 +56,17 @@ if [ "$ENABLE_REST_API" = "true" ]; then
 fi
 
 if [ "$PUBLIC_RPC" = "true" ]; then
-  sed -i 's/laddr = "tcp:\/\/127.0.0.1:26657"/c\laddr = "tcp:\/\/0.0.0.0:'$RPC_PORT'"/g' $HOME_DIR/config/config.toml
+  sed -i 's/laddr = "tcp:\/\/127.0.0.1:26657"/c\laddr = "tcp:\/\/0.0.0.0:'$RPC_PORT'"/g' $HOME/.cantod/config/config.toml
 fi
 
 # Syncs node
 cd $HOME/canto-node-primer
 chmod 700 state_sync.sh
 ./state_sync.sh
+
+mkdir -p $HOME/.cantod/cosmovisor/genesis/bin
+mkdir -p $HOME/.cantod/cosmovisor/upgrades
+ln -s /usr/bin/cantod $HOME/.cantod/cosmovisor/genesis/bin/cantod
+
 sudo service canto stop
 sudo service canto start
