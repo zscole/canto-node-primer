@@ -20,6 +20,7 @@ RPC_PORT="26657"
 # Updates system and installs dependencies
 sudo apt-get -y update && sudo apt-get -y upgrade
 sudo snap install go --classic && sudo apt-get install -y git gcc make jq
+go install github.com/cosmos/cosmos-sdk/cosmovisor/cmd/cosmovisor@v1.0.0
 cd /$HOME/
 git clone https://github.com/Canto-Network/Canto.git
 cd Canto
@@ -28,7 +29,10 @@ git checkout v5.0.0
 # Installs and builds Canto daemon program
 cd $HOME/Canto/cmd/cantod
 go install -tags ledger ./...
-sudo mv $HOME/go/bin/cantod /usr/bin/
+
+mkdir -p $HOME/.cantod/cosmovisor/genesis/bin
+mkdir -p $HOME/.cantod/cosmovisor/upgrades
+mv $HOME/go/bin/cantod $HOME/.cantod/cosmovisor/genesis/bin
 
 cd $HOME/Canto
 sudo make install
