@@ -50,9 +50,14 @@ From the `$HOME/canto-node-primer` folder, run `chmod 700 setup.sh` to make the 
 
 Before running the script, edit the `canto.service` file and replace `INSERT_YOUR_USERNAME_HERE` with your username on line 7. If you're on a VM, you can edit the file from your CLI by running `vim canto.service`. If you're not sure what your username is, just run the command `echo $USER`, which will return your username. 
 
-Make sure your go version is >= 1.18
+Make sure your go version is >= 1.18 and correctly configured
 
-Then run `./setup.sh` and let the script work its magic.
+Then run `./setup.sh` and let the script work its magic. 
+
+The sync process shouldn't take very long because we leverage state-sync functionality which is pulled from a node operated by the Polkachu team. By default, your node will run as a full node. This means it will maintain historical state and also validate whether or not a transaction was confirmed by the network, but if your application requires specific historical events, you'll need an archive node, which takes a much longer time to sync and demands a higher amount of computational resources.
+
+# Additional Notes
+If you plan on interacting with the node often, it might make more sense to run the application in a [tmux](https://github.com/tmux/tmux/wiki) window as opposed to a systemd service. This will allow you to interact with your node's command line interface without running the risk of halting the application process. 
 
 
 
