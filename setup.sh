@@ -40,5 +40,4 @@ cd $HOME/canto-node-primer
 chmod 700 state_sync.sh
 ./state_sync.sh
 sudo service canto stop
-cantod unsafe-reset-all
 sudo service canto start
