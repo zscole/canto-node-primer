@@ -7,6 +7,7 @@ MONIKER="YOUR_MONIKER_HERE"
 # Updates system and installs dependencies
 sudo apt-get -y update && sudo apt-get -y upgrade
 sudo snap install go --classic && sudo apt-get install git && sudo apt-get install gcc && sudo apt-get -y install make
+cd /$HOME/
 git clone https://github.com/Canto-Network/Canto.git
 cd Canto
 git checkout v5.0.0
