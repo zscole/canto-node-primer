@@ -6,12 +6,13 @@ set -e
 MONIKER="YOUR_MONIKER_HERE"
 
 # Checks to see if you've already installed Canto
+# 
 [ -e /$HOME/Canto ] && rm -rf /$HOME/Canto
 [ -e /$HOME/.cantod/config/genesis.json ] && rm -rf /$HOME/.cantod/config/genesis.json
 
 # Updates system and installs dependencies
 sudo apt-get -y update && sudo apt-get -y upgrade
-sudo snap install go --classic && sudo apt-get install git && sudo apt-get install gcc && sudo apt-get -y install make
+sudo snap install go --classic && sudo apt-get install -y git gcc make jq
 cd /$HOME/
 git clone https://github.com/Canto-Network/Canto.git
 cd Canto
