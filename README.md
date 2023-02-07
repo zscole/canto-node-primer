@@ -56,6 +56,13 @@ Then run `./setup.sh` and let the script work its magic.
 
 The sync process shouldn't take very long because we leverage state-sync functionality which is pulled from a node operated by the Polkachu team. By default, your node will run as a full node. This means it will maintain historical state and also validate whether or not a transaction was confirmed by the network, but if your application requires specific historical events, you'll need an archive node, which takes a much longer time to sync and demands a higher amount of computational resources.
 
+# Conncecting To Your Node In Metamask
+
+Your node will be running on `localhost` serving JSON RPC via default port `8545`. To connect to your node, simply add a new network in Metamask using the following parameters and save the network.
+
+![](add-network.png)
+
+
 # Additional Notes
 If you plan on interacting with the node often, it might make more sense to run the application in a [tmux](https://github.com/tmux/tmux/wiki) window as opposed to a systemd service. This will allow you to interact with your node's command line interface without running the risk of halting the application process. 
 
