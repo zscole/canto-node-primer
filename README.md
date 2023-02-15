@@ -33,7 +33,7 @@ Now, let's dive into the technical details.
 
 I am setting up a node on a VM that I have deployed on [Google Cloud Platform](https://cloud.google.com/). 
 I'm using Ubuntu 18.04 LTS. I have selected a general-purpose e2-standard-4 VM with 4 vCPUs, 16GB of RAM, and 300GB of disk space. 
-If you require high perfomance, I would recommend running NVME SSDs, but for the purpose of this guide, I'm using standard persistent disks. 
+If you require high performance, I would recommend running NVME SSDs, but for the purpose of this guide, I'm using standard persistent disks. 
 The total monthly cost for a VM with this configuration is approximately $127.84, or about $0.18 hourly.
 
 # Network Details
@@ -56,7 +56,7 @@ Then run `./setup.sh` and let the script work its magic.
 
 The sync process shouldn't take very long because we leverage state-sync functionality which is pulled from a node operated by the Polkachu team. By default, your node will run as a full node. This means it will maintain historical state and also validate whether or not a transaction was confirmed by the network, but if your application requires specific historical events, you'll need an archive node, which takes a much longer time to sync and demands a higher amount of computational resources.
 
-# Conncecting To Your Node In Metamask
+# Connecting To Your Node In Metamask
 
 Your node will be running on `localhost` serving JSON RPC via default port `8545`. To connect to your node, simply add a new network in Metamask using the following parameters and save the network.
 
